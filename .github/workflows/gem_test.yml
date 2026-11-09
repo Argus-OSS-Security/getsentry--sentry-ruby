@@ -6,25 +6,26 @@ name: Gem Test
 # test-matrix.json (the single source of truth), expanded here and run via
 # bin/test — so adding/removing a cell never touches this file.
 
-on:
-  workflow_call:
-    inputs:
-      gem:
-        description: Gem directory to test (e.g. sentry-ruby).
-        required: true
-        type: string
-      sqlite:
-        description: Install SQLite development headers.
-        type: boolean
-        default: false
-      imagemagick:
-        description: Install ImageMagick.
-        type: boolean
-        default: false
-    secrets:
-      CODECOV_TOKEN:
-        required: false
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_call:
+#     inputs:
+#       gem:
+#         description: Gem directory to test (e.g. sentry-ruby).
+#         required: true
+#         type: string
+#       sqlite:
+#         description: Install SQLite development headers.
+#         type: boolean
+#         default: false
+#       imagemagick:
+#         description: Install ImageMagick.
+#         type: boolean
+#         default: false
+#     secrets:
+#       CODECOV_TOKEN:
+#         required: false
+# 
 jobs:
   matrix:
     runs-on: ubuntu-latest

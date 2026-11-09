@@ -1,12 +1,13 @@
 name: e2e tests
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
-  pull_request:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - master
+#   pull_request:
+# 
 permissions:
   contents: read
   packages: read

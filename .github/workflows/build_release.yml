@@ -1,9 +1,10 @@
 name: Build Release
 
-on:
-  push:
-    branches:
-      - release/**
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches:
+#       - release/**
 jobs:
   build:
     name: Build gems

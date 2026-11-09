@@ -1,13 +1,14 @@
 name: Release
-on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Version to release
-        required: true
-      force:
-        description: Force a release even when there are release-blockers (optional)
-        required: false
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       version:
+#         description: Version to release
+#         required: true
+#       force:
+#         description: Force a release even when there are release-blockers (optional)
+#         required: false
 jobs:
   release:
     runs-on: ubuntu-latest

@@ -11,20 +11,21 @@ name: Update lockfiles
 # cell against its matching Ruby via `mise exec`, and each app against the
 # oldest Ruby in the e2e matrix. One invocation regenerates the whole lock set.
 
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - master
-    # Releases update the path gemspecs and version files. Regenerate the
-    # committed locks immediately after those changes land on master.
-    paths:
-      - "**/*.gemspec"
-      - "**/lib/sentry/**/version.rb"
-  schedule:
-    # Weekly: refresh pins so we keep getting security patches.
-    - cron: "0 4 * * 1"
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   workflow_dispatch:
+#   push:
+#     branches:
+#       - master
+#     # Releases update the path gemspecs and version files. Regenerate the
+#     # committed locks immediately after those changes land on master.
+#     paths:
+#       - "**/*.gemspec"
+#       - "**/lib/sentry/**/version.rb"
+#   schedule:
+#     # Weekly: refresh pins so we keep getting security patches.
+#     - cron: "0 4 * * 1"
+# 
 permissions:
   contents: write
 
